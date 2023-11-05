@@ -1,0 +1,42 @@
+unit Aula7Ex1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfmlListBox = class(TForm)
+    lbNomes: TListBox;
+    lblSelecionado: TLabel;
+    procedure lbNomesClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmlListBox: TfmlListBox;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfmlListBox.lbNomesClick(Sender: TObject);
+
+var
+  posicao: integer;
+
+begin
+   posicao:=lbNomes.ItemIndex;
+
+   if (posicao=-1) then
+      ShowMessage ('Selecione um item')
+   else
+      lblSelecionado.Caption:=IntToStr(posicao); //Converter para colocar dentro de uma string
+
+end;
+
+end.

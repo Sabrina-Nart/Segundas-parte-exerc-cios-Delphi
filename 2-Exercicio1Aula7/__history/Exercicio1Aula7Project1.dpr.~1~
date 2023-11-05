@@ -1,0 +1,14 @@
+program Exercicio1Aula7Project1;
+
+uses
+  Vcl.Forms,
+  Exercicio1Aula7 in 'Exercicio1Aula7.pas' {Exercicio1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TExercicio1, Exercicio1);
+  Application.Run;
+end.

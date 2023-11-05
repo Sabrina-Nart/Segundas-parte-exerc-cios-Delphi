@@ -1,0 +1,74 @@
+object fmlListBox: TfmlListBox
+  Left = 0
+  Top = 0
+  Caption = 'Teste ListBox'
+  ClientHeight = 311
+  ClientWidth = 517
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblSelecionado: TLabel
+    Left = 32
+    Top = 264
+    Width = 145
+    Height = 13
+    Caption = 'Nenhum Selecionado'
+  end
+  object lbNomes: TListBox
+    Left = 32
+    Top = 57
+    Width = 209
+    Height = 193
+    ItemHeight = 13
+    Items.Strings = (
+      'Item 1'
+      'Item 2'
+      'Item 3'
+      'Maria'
+      'Ad'#227'o'
+      'Carlos')
+    TabOrder = 2
+    OnClick = lbNomesClick
+  end
+  object edtNome: TEdit
+    Left = 32
+    Top = 8
+    Width = 209
+    Height = 26
+    TabOrder = 0
+  end
+  object btnAdicionar: TButton
+    Left = 247
+    Top = 8
+    Width = 75
+    Height = 26
+    Caption = 'Adicionar'
+    Default = True
+    TabOrder = 1
+    OnClick = btnAdicionarClick
+  end
+  object btnDel1: TButton
+    Left = 247
+    Top = 57
+    Width = 90
+    Height = 32
+    Caption = 'Deleta Primeiro'
+    TabOrder = 3
+    OnClick = btnDel1Click
+  end
+  object btnDelete: TButton
+    Left = 247
+    Top = 104
+    Width = 90
+    Height = 33
+    Caption = 'Del.Selecionado'
+    TabOrder = 4
+    OnClick = btnDeleteClick
+  end
+end

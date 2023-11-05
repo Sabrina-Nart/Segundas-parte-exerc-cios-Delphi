@@ -1,0 +1,39 @@
+object fmlListBox: TfmlListBox
+  Left = 0
+  Top = 0
+  Caption = 'Teste ListBox'
+  ClientHeight = 279
+  ClientWidth = 518
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblSelecionado: TLabel
+    Left = 32
+    Top = 232
+    Width = 145
+    Height = 13
+    Caption = 'Nenhum Selecionado'
+  end
+  object lbNomes: TListBox
+    Left = 32
+    Top = 24
+    Width = 209
+    Height = 193
+    ItemHeight = 13
+    Items.Strings = (
+      'Item 1'
+      'Item 2'
+      'Item 3'
+      'Maria'
+      'Ad'#227'o'
+      'Carlos')
+    TabOrder = 0
+    OnClick = lbNomesClick
+  end
+end

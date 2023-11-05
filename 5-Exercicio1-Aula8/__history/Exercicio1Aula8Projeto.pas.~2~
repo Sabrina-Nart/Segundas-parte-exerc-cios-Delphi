@@ -1,0 +1,64 @@
+unit Exercicio1Aula8Projeto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TExercicio1Aula8 = class(TForm)
+    edtNome: TEdit;
+    cbNomes: TComboBox;
+    btnMostrar: TButton;
+    procedure btnMostrarClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Exercicio1Aula8: TExercicio1Aula8;
+
+implementation
+
+{$R *.dfm}
+
+procedure TExercicio1Aula8.btnMostrarClick(Sender: TObject);
+
+var
+  nome:string;
+
+begin
+  Nome:=edtNome.text;
+
+   if cbNomes.ItemIndex=0 then
+     Begin
+       Nome:=UpperCase ( Nome );
+       ShowMessage (Nome);
+
+     End
+   else
+      if cbNomes.ItemIndex=1 then
+        Begin
+           Nome[1]:=LowerCase ( Nome [1]);
+           ShowMessage (Nome);
+
+        end
+      else
+         Begin //transformar a primeira letra - Ex 1 da apostila
+            Nome[1]:=LowerCase ( Nome );
+            Nome[1]:=UpperCase ( Nome [1]);
+            ShowMessage (Nome);
+
+         End;
+   //Posso deixar o ShowMesssage no final
+   //Pode usar o case
+
+end;
+
+end.
+
+//

@@ -1,0 +1,76 @@
+unit Aula7Ex1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfmlListBox = class(TForm)
+    lbNomes: TListBox;
+    lblSelecionado: TLabel;
+    edtNome: TEdit;
+    btnAdicionar: TButton;
+    btnDel1: TButton;
+    btnDelete: TButton;
+
+    procedure lbNomesClick(Sender: TObject);
+    procedure btnAdicionarClick(Sender: TObject);
+    procedure btnDel1Click(Sender: TObject);
+    procedure btnDeleteClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fmlListBox: TfmlListBox;
+
+implementation
+
+{$R *.dfm}
+/////////////////////////////////////////////////////////////
+procedure TfmlListBox.btnAdicionarClick(Sender: TObject);
+
+begin
+   lbNomes.Items.Add( edtNome.Text ); //Defult = Foco no componente = só pode ser usado uma vez
+   edtNome.Text:=' '; //Pode ser clear
+   edtNome.SetFocus;//Foco no componente
+
+end;
+/////////////////////////////////////////////////////////
+procedure TfmlListBox.btnDel1Click(Sender: TObject);
+
+begin
+   lbNomes.Items.Delete(0); //Deleta a posição que eu coloco aqui
+
+end;
+////////////////////////////////////////////////////////////
+procedure TfmlListBox.btnDeleteClick(Sender: TObject);
+
+begin
+   if lbNomes.ItemIndex=-1 then  //caso não tenha escolhido um para deletar
+      ShowMessage ('Selecione um item para apagar')
+   else
+      lbNomes.Items.Delete( lbNomes.ItemIndex ); //Deletar aquele que foi selecionado
+end;
+///////////////////////////////////////////////////////////
+procedure TfmlListBox.lbNomesClick(Sender: TObject);
+
+var
+  posicao: integer;
+
+begin
+   posicao:=lbNomes.ItemIndex;
+
+   if (posicao=-1) then
+      ShowMessage ('Selecione um item')
+   else
+      lblSelecionado.Caption:='Selecionou ' + IntToStr(posicao); //Converter para colocar dentro de uma string
+
+end;
+
+end.

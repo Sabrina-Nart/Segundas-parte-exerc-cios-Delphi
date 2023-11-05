@@ -1,0 +1,42 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 321
+  ClientWidth = 532
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cbAceito: TCheckBox
+    Left = 24
+    Top = 196
+    Width = 121
+    Height = 25
+    Caption = 'Aceito os termos'
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Left = 24
+    Top = 24
+    Width = 249
+    Height = 145
+    Lines.Strings = (
+      'Termos do Contrato')
+    TabOrder = 1
+  end
+  object btnFinalizar: TButton
+    Left = 198
+    Top = 196
+    Width = 75
+    Height = 25
+    Caption = 'Continuar'
+    TabOrder = 2
+    OnClick = btnFinalizarClick
+  end
+end
